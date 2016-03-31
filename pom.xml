@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
-  <artifactId>hello</artifactId>
+  <artifactId>MyJBossApp</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>hello Maven Webapp</name>
@@ -39,6 +39,11 @@
             <artifactId>jboss-servlet-api_3.0_spec</artifactId>
             <version>${jboss-servlet-api_3.0_spec.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.noctarius.discovery</groupId>
+            <artifactId>hazelcast-kubernetes-discovery</artifactId>
+            <version>0.9.2</version>
         </dependency>
     </dependencies>
 

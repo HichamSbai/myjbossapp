@@ -1,17 +1,17 @@
 // very simple hello world app
 package org.example;
 
-import javax.servlet.http.HttpServlet;
+import java.io.IOException;
+import java.net.InetAddress;
+
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-public class HelloServlet extends HttpServlet
-{
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-    throws ServletException, IOException
-    {
-        resp.getWriter().print("Hello world: "+java.net.InetAddress.getLocalHost());
+public class HelloServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.getWriter().print("Hello world: " + InetAddress.getLocalHost());
     }
 }

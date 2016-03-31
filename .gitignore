@@ -1,2 +1,5 @@
 # root gitignore file
 /target/
+.classpath
+.project
+.settings/

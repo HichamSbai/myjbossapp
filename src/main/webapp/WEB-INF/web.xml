@@ -18,6 +18,6 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>HelloHazelcast</servlet-name>
-    <url-pattern>/helloHazelcast</url-pattern>
+    <url-pattern>/helloHazelcast/*</url-pattern>
   </servlet-mapping>
 </web-app>

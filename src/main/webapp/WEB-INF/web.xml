@@ -8,8 +8,16 @@
     <servlet-name>HelloServlet</servlet-name>
     <servlet-class>org.example.HelloServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>HelloHazelcast</servlet-name>
+    <servlet-class>org.example.HelloHazelcast</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>/helloServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HelloHazelcast</servlet-name>
+    <url-pattern>/helloHazelcast</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -27,7 +27,7 @@ public class DbSample extends HttpServlet {
         try {
             Context initContext = new InitialContext();
 
-            DataSource ds = (DataSource) initContext.lookup("java:jboss/jdbc/mydbDS");
+            DataSource ds = (DataSource) initContext.lookup("jdbc/mydbDS");
             if (ds == null) {
                 throw new Exception("Data source not found!");
             }

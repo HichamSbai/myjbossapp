@@ -26,9 +26,8 @@ public class DbSample extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             Context initContext = new InitialContext();
-            Context webContext = (Context) initContext.lookup("java:/comp/env");
 
-            DataSource ds = (DataSource) webContext.lookup("jdbc/mydbDS");
+            DataSource ds = (DataSource) initContext.lookup("java:jboss/jdbc/mydbDS");
             if (ds == null) {
                 throw new Exception("Data source not found!");
             }

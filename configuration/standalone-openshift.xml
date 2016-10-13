@@ -134,8 +134,8 @@
                     <connection-url>jdbc:mysql://${env.DATABASE_SERVICE_HOST:mysql}:${env.DATABASE_SERVICE_PORT:3306}/${env.MYSQL_DATABASE:mydb}</connection-url>
                     <driver>mysql</driver>
                     <security>
-                      <user-name>${env.MYSQL_USER:root}</user-name>
-                      <password>${env.MYSQL_PASSWORD:}</password>
+                      <user-name>${env.MYSQL_USER:sa}</user-name>
+                      <password>${env.MYSQL_PASSWORD:sa}</password>
                     </security>
                 </datasource>
                 <drivers>

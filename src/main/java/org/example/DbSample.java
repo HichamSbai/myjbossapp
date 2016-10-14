@@ -38,6 +38,7 @@ public class DbSample extends HttpServlet {
             while (rs.next()) {
                 String userid = rs.getString("ID");
                 String username = rs.getString("NAME");
+                resp.getWriter().print("<b>Userid: Username</b><br>");
                 resp.getWriter().print(userid + ":" + username + "<br>");
             }
         } catch (NamingException e) {

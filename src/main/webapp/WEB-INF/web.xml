@@ -12,6 +12,10 @@
     <servlet-name>DbSample</servlet-name>
     <servlet-class>org.example.DbSample</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>HazelcastSample</servlet-name>
+    <servlet-class>org.example.HazelcastSample</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/helloServlet</url-pattern>
@@ -19,5 +23,9 @@
   <servlet-mapping>
     <servlet-name>DbSample</servlet-name>
     <url-pattern>/dbSample/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HazelcastSample</servlet-name>
+    <url-pattern>/hazelcastSample/*</url-pattern>
   </servlet-mapping>
 </web-app>

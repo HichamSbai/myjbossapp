@@ -35,11 +35,11 @@ public class DbSample extends HttpServlet {
             String selectSQL = "SELECT ID, NAME FROM mytable";
             PreparedStatement preparedStatement = conn.prepareStatement(selectSQL);
             ResultSet rs = preparedStatement.executeQuery(selectSQL);
-            resp.getWriter().print("<b>Userid: Username</b><br>");
+            resp.getWriter().println("<b>Userid: Username</b><br>");
             while (rs.next()) {
                 String userid = rs.getString("ID");
                 String username = rs.getString("NAME");
-                resp.getWriter().print(userid + ":" + username + "\n");
+                resp.getWriter().println(userid + ":" + username + "\n");
             }
         } catch (NamingException e) {
             // TODO Auto-generated catch block

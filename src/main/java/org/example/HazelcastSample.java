@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.hazelcast.client.HazelcastClient;
-import com.hazelcast.client.config.ClientConfig;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 
@@ -21,8 +20,7 @@ public class HazelcastSample extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ClientConfig clientConfig = new ClientConfig();
-        HazelcastInstance client = HazelcastClient.newHazelcastClient(clientConfig);
+        HazelcastInstance client = HazelcastClient.newHazelcastClient();
         IMap map = client.getMap("myMap");
         resp.getWriter().println("Map Size:" + map.size());
         String mapKey = req.getParameter("key");
@@ -36,4 +34,5 @@ public class HazelcastSample extends HttpServlet {
             }
         }
     }
+
 }

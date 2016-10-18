@@ -15,23 +15,36 @@
   ~ limitations under the License.
   -->
 
-<hazelcast-client xsi:schemaLocation="http://www.hazelcast.com/schema/client-config hazelcast-client-config-3.6.xsd"
+<hazelcast-client xsi:schemaLocation="http://www.hazelcast.com/schema/client-config hazelcast-client-config-3.7.xsd"
                   xmlns="http://www.hazelcast.com/schema/client-config"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <properties>
+    <property name="hazelcast.rest.enabled">true</property>
     <property name="hazelcast.discovery.enabled">true</property>
   </properties>
-
+  
   <network>
-    <discovery-strategies>
-      <discovery-strategy enabled="true" class="com.noctarius.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
-        <properties>
-          <property name="service-name">my-hazelcast-service</property>
-          <property name="namespace">axach-bpm</property>
-        </properties>
-      </discovery-strategy>
-    </discovery-strategies>
+    <join>
+      <!-- deactivate normal discovery -->
+      <multicast enabled="false"/>
+      <tcp-ip enabled="false" />
+
+      <!-- activate the Kubernetes plugin -->
+      <discovery-strategies>
+        <discovery-strategy enabled="true"
+            class="com.noctarius.hazelcast.kubernetes.HazelcastKubernetesDiscoveryStrategy">
+
+          <properties>
+            <!-- configure discovery service API lookup -->
+            <property name="service-name">my-hazelcast-service</property>
+             <property name="service-label-name">name</property>
+              <property name="service-label-value">hazelcast-node-my-hazelcast-cluster</property>
+            <property name="namespace">axach-bpm</property>
+          </properties>
+        </discovery-strategy>
+      </discovery-strategies>
+    </join>
   </network>
 
 </hazelcast-client>

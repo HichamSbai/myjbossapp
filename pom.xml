@@ -37,7 +37,7 @@
         </dependency>
         <dependency>
             <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast-client</artifactId>
+            <artifactId>hazelcast-all</artifactId>
             <version>3.7.1</version>
         </dependency>
         <dependency>

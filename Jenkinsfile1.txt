@@ -1,0 +1,10 @@
+node('maven') {
+stage 'build'
+openshiftBuild(buildConfig: 'eap64-app-build', showBuildLogs: 'true')
+stage 'scale down to 0'
+openshiftScale(deploymentConfig: 'eap64-app-deployment', replicaCount: '0')
+stage 'deploy'
+openshiftDeploy(deploymentConfig: 'eap64-app-deployment')
+stage 'scale up to 1'
+openshiftScale(deploymentConfig: 'eap64-app-deployment', replicaCount: '1')
+}
